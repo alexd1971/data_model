@@ -9,12 +9,13 @@ class PersonId extends ObjectId {
   }
 }
 
-class Person extends Model {
+class Person implements Model<PersonId> {
   
+  PersonId id;
   String lastName;
   String firstName;
 
-  Person({PersonId id, this.firstName, this.lastName}): super(id);
+  Person({this.id, this.firstName, this.lastName});
 
   factory Person.fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
@@ -26,8 +27,9 @@ class Person extends Model {
   }
 
   @override
-  Map<String, dynamic> get json => super.json..addAll({
+  Map<String, dynamic> get json => {
+        'id': id?.json,
         'lastName': lastName,
         'firstName': firstName
-      })..removeWhere((key, value) => value == null);
+      }..removeWhere((key, value) => value == null);
 }
