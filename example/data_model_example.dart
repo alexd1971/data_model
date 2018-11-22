@@ -20,7 +20,7 @@ class Person implements Model<PersonId> {
   factory Person.fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
     return Person(
-      id: json['id'],
+      id: PersonId(json['id']),
       lastName: json['lastName'],
       firstName: json['firstName']
     );
