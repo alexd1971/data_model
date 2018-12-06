@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/alexd1971/data_model.svg?branch=master)](https://travis-ci.com/alexd1971/data_model)
+
 The package contains tools to implement any data model.
 
 ## Usage
