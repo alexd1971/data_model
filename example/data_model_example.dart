@@ -10,7 +10,6 @@ class PersonId extends ObjectId {
 }
 
 class Person implements Model<PersonId> {
-  
   PersonId id;
   String lastName;
   String firstName;
@@ -20,10 +19,9 @@ class Person implements Model<PersonId> {
   factory Person.fromJson(Map<String, dynamic> json) {
     if (json == null) return null;
     return Person(
-      id: PersonId(json['id']),
-      lastName: json['lastName'],
-      firstName: json['firstName']
-    );
+        id: PersonId(json['id']),
+        lastName: json['lastName'],
+        firstName: json['firstName']);
   }
 
   @override
