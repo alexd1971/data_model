@@ -4,3 +4,4 @@ library data_model;
 export 'src/json_encodable.dart';
 export 'src/model.dart';
 export 'src/object_id.dart';
+export 'src/data_page.dart';
